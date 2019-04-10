@@ -4,14 +4,14 @@ BLACK = color(0)
 def setup():
     global theLevel,size1
     size(600,600)
-    theLevel = 1
-    size1 = 40
+    theLevel = 13
+    size1 = 4
     
 def draw():
     global theLevel
     background(255)
     translate(width/2, height/2)
-    angle = map(mouseX,0,width.0,2*PI)
+    angle = map(mouseX,0,width,0,2*PI)
     stroke(RED)
     strokeWeight(3)
     pushMatrix()
@@ -23,22 +23,22 @@ def draw():
     rightDragon(size1,theLevel-1)
     
 def leftDragon(size1,theLevel):
-    if level == 0:
-        line(0,0,sz,0)
-        translate(sz,0)
+    if theLevel == 0:
+        line(0,0,size1,0)
+        translate(size1,0)
     else:
-        leftDragon(sz,level-1)
+        leftDragon(size1,theLevel-1)
         rotate(radians(-90))
-        rightDragon(sz,level-1)
+        rightDragon(size1,theLevel-1)
         
-def rightDragon(sz,level):
-    if level == 0:
-        line(0,0,sz,0)
-        translate(sz,0)
+def rightDragon(size1,theLevel):
+    if theLevel == 0:
+        line(0,0,size1,0)
+        translate(size1,0)
     else:
-        leftDragon(sz,level-1)
+        leftDragon(size1,theLevel-1)
         rotate(radians(90))
-        rightDragon(sz,level-1)
+        rightDragon(size1,theLevel-1)
         
 def keyPressed():
     global theLevel,size1
